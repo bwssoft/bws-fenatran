@@ -1,8 +1,9 @@
 "use client";
+import { Spinner } from "../components/spinner";
 import { useLeadForm } from "./use-lead";
 
 export function LeadForm() {
-  const { register, handleSubmit, errors } = useLeadForm();
+  const { register, handleSubmit, errors, isLoading } = useLeadForm();
   return (
     <form
       className="w-full max-w-md"
@@ -73,10 +74,11 @@ export function LeadForm() {
       </div>
       <div className="mt-6 flex items-center justify-center gap-x-6">
         <button
+          disabled={isLoading}
           type="submit"
-          className="w-full sm:max-w-xs text-center mt-12 px-8 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500"
+          className="w-full sm:max-w-xs text-center mt-12 px-8 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 flex justify-center"
         >
-          Jogar
+          {isLoading ? <Spinner /> : "Jogar"}
         </button>
       </div>
     </form>

@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useRouter } from "next/navigation"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { saveLead } from '../../action/save-lead';
 
 const schema = z.object({
@@ -20,6 +20,7 @@ const schema = z.object({
 export type Schema = z.infer<typeof schema>;
 
 export function useLeadForm() {
+  const [isLoading, setIsLoading] = useState(false)
   const {
     register,
     handleSubmit: hookFormSubmit,
@@ -35,8 +36,10 @@ export function useLeadForm() {
 
   const handleSubmit = hookFormSubmit(async (data) => {
     try {
+      setIsLoading(true)
       await saveLead(data)
       router.push("/memory-game")
+      setIsLoading(false)
     } catch (e) {
       console.error(e)
     }
@@ -53,5 +56,6 @@ export function useLeadForm() {
     control,
     setValue,
     reset: hookFormReset,
+    isLoading
   };
 }
