@@ -1,6 +1,7 @@
 import "@/app/lib/styles/space.css";
 import { LeadForm } from "./lib/ui/forms/lead";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function MemoryGame() {
   return (
@@ -11,6 +12,13 @@ export default function MemoryGame() {
       <h1 className="text-center text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 mb-8 drop-shadow-xl py-2">
         Jogue e GANHE um BONÉ!
       </h1>
+      <Image
+        src={"/BONÉ-BWS.png"}
+        width={540}
+        height={540}
+        alt="boné"
+        className="drop-shadow-[0_20px_20px_#3BACD185]"
+      />
 
       <LeadForm />
       <div className="flex mt-5 gap-4">
