@@ -7,7 +7,6 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/react";
-import { CheckIcon, XCircleIcon } from "@heroicons/react/24/outline";
 
 export function Modal(props: {
   is_open: boolean;
@@ -41,7 +40,7 @@ export function Modal(props: {
           >
             <div>
               <div className="mx-auto flex items-center justify-center rounded-full ">
-                {winner ? (
+                {/* {winner ? (
                   <CheckIcon
                     aria-hidden="true"
                     className="h-12 w-12 text-green-600"
@@ -51,7 +50,7 @@ export function Modal(props: {
                     aria-hidden="true"
                     className="h-12 w-12 text-red-600"
                   />
-                )}
+                )} */}
               </div>
               <div className="mt-3 text-center sm:mt-5">
                 <DialogTitle
