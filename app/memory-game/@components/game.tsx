@@ -1,32 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useFlippedCards } from "../@hooks/use-flipped-cards";
 import "@/app/lib/styles/space.css";
-import useTimer from "../@hooks/use-timer";
 import Image from "next/image";
+import { useGame } from "../@hooks/use-game";
 
 export const MemoryGame: React.FC = () => {
-  const [isGameStarted, setIsGameStarted] = useState(false);
-  const { cards, handleCardClick, resetGame } = useFlippedCards();
-  const { timeLeft, progress } = useTimer(30, isGameStarted);
-
-  useEffect(() => {
-    if (timeLeft === 0 && isGameStarted) {
-      alert("Tempo esgotado! Tente novamente.");
-      handleReset();
-    }
-  }, [timeLeft, isGameStarted]);
-
-  const handleStartGame = () => {
-    setIsGameStarted(true);
-  };
-
-  const handleReset = () => {
-    resetGame();
-    setIsGameStarted(false);
-  };
-
+  const {
+    cards,
+    handleCardClick,
+    progress,
+    handleStartGame,
+    handleReset,
+    isGameStarted,
+  } = useGame();
   return (
     <div className="memory-game-container flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 text-white relative">
       {isGameStarted && (
@@ -45,32 +31,28 @@ export const MemoryGame: React.FC = () => {
         Complete o desafio e ganhe um brinde!
       </p>
 
-      {isGameStarted ? (
-        <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 sm:gap-6">
-          {cards.map((card) => (
-            <div
-              key={card.id}
-              onClick={() => handleCardClick(card)}
-              className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center cursor-pointer rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 ${
-                card.isFlipped || card.isMatched
-                  ? "bg-gradient-to-br from-blue-800 via-blue-900 to-gray-900 bg-opacity-80 backdrop-blur-lg border border-blue-700 shadow-[0_0_15px_rgba(30,58,138,0.6)]"
-                  : "bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 text-white"
-              }`}
-            >
-              {(card.isFlipped || card.isMatched) && (
-                <Image
-                  src={card.value}
-                  fill={true}
-                  alt="Memory card"
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              )}
-            </div>
-          ))}
-        </div>
-      ) : (
-        <></>
-      )}
+      <div className="grid grid-cols-3 sm:grid-cols-4 gap-4 sm:gap-6">
+        {cards.map((card) => (
+          <div
+            key={card.id}
+            onClick={() => handleCardClick(card)}
+            className={`w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 flex items-center justify-center cursor-pointer rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 ${
+              card.isFlipped || card.isMatched
+                ? "bg-gradient-to-br from-blue-800 via-blue-900 to-gray-900 bg-opacity-80 backdrop-blur-lg border border-blue-700 shadow-[0_0_15px_rgba(30,58,138,0.6)]"
+                : "bg-gradient-to-br from-blue-700 via-blue-800 to-gray-900 text-white"
+            }`}
+          >
+            {(card.isFlipped || card.isMatched) && (
+              <Image
+                src={card.value}
+                fill={true}
+                alt="Memory card"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            )}
+          </div>
+        ))}
+      </div>
 
       {!isGameStarted ? (
         <button
