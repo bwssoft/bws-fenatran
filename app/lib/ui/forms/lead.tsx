@@ -49,6 +49,7 @@ export function LeadForm() {
               >
                 Telefone
               </label>
+
               <input
                 {...register("phone")}
                 placeholder="55 11 940174266"
