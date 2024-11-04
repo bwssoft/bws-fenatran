@@ -84,7 +84,7 @@ export const useFlippedCards = () => {
   const flipAllCards = async (flip: boolean) => {
     setDisableClick(true);
     for (let i = 0; i < cards.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 75));
       setCards((prevCards) =>
         prevCards.map((card, index) =>
           index === i ? { ...card, isFlipped: flip } : card

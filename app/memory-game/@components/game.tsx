@@ -3,6 +3,7 @@
 import "@/app/lib/styles/space.css";
 import { useGame } from "../@hooks/use-game";
 import { Modal } from "./modal";
+import Image from "next/image";
 
 export const MemoryGame: React.FC = () => {
   const {
@@ -51,7 +52,8 @@ export const MemoryGame: React.FC = () => {
               }`}
             >
               {(card.isFlipped || card.isMatched) && (
-                <img
+                <Image
+                  fill={true}
                   src={card.value}
                   alt="Memory card"
                   className="w-full h-full object-cover rounded-lg"
