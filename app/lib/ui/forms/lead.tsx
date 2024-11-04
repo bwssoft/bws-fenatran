@@ -4,7 +4,11 @@ import { useLeadForm } from "./use-lead";
 export function LeadForm() {
   const { register, handleSubmit, errors } = useLeadForm();
   return (
-    <form className="w-full max-w-md" onSubmit={handleSubmit}>
+    <form
+      className="w-full max-w-md"
+      onSubmit={handleSubmit}
+      autoComplete="off"
+    >
       <div className="space-y-12">
         <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div className="col-span-full">
@@ -18,6 +22,7 @@ export function LeadForm() {
               <input
                 placeholder="BWS Iot"
                 type="text"
+                autoComplete="off"
                 id="name"
                 {...register("name")}
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
@@ -36,6 +41,7 @@ export function LeadForm() {
               <input
                 {...register("email")}
                 placeholder="suporte@bwsiot.com"
+                autoComplete="off"
                 type="email"
                 id="email"
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
@@ -55,6 +61,7 @@ export function LeadForm() {
               <input
                 {...register("phone")}
                 placeholder="55 11 940174266"
+                autoComplete="off"
                 type="tel"
                 id="phone"
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"

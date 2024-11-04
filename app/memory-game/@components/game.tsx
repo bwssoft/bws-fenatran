@@ -73,9 +73,9 @@ export const MemoryGame: React.FC = () => {
         ) : (
           <button
             onClick={handleReset}
-            className="mt-8 sm:mt-12 px-6 py-2 sm:px-8 sm:py-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500"
+            className="w-fit shadow-2xl transition-all duration-200 text-nowrap p-3 px-5 text-center bg-black border-2 focus:ring-4 focus:ring-blue-500 border-gray-500 rounded-md font-medium text-white hover:bg-gray-900/40 bottom-5 right-5 absolute"
           >
-            Resetar o jogo
+            R
           </button>
         )}
       </div>
