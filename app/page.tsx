@@ -8,8 +8,12 @@ export default function MemoryGame() {
       <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 mb-8 drop-shadow-xl py-2">
         Bem vindo ao BWSpace
       </h1>
-      <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 mb-8 drop-shadow-xl py-2">
-        Jogue e GANHE um BONÉ!
+      <h1 className="text-center text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-500 to-blue-700 mb-8 drop-shadow-xl py-2 lg:absolute lg:top-72 lg:text-7xl">
+        Jogue
+        <br />
+        e
+        <br />
+        GANHE um BONÉ!
       </h1>
 
       <LeadForm />
