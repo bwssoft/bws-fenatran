@@ -15,6 +15,7 @@ export const MemoryGame: React.FC = () => {
     isGameStarted,
     conclusion,
     handleExitGame,
+    timeLeft,
   } = useGame();
   return (
     <>
@@ -25,15 +26,22 @@ export const MemoryGame: React.FC = () => {
       />
       <div className="memory-game-container flex flex-col items-center justify-center min-h-screen p-4 sm:p-6 text-white relative">
         {isGameStarted && (
-          <div className="absolute left-0 top-0 right-0 w-full h-2 bg-gray-300 rounded-full overflow-hidden mb-6">
-            <div
-              style={{ width: `${progress}%` }}
-              className="h-full bg-blue-500 transition-all duration-1000"
-            ></div>
-          </div>
+          <>
+            <div className="absolute left-0 top-0 right-0 w-full h-2 bg-gray-300 rounded-full overflow-hidden mb-6">
+              <div
+                style={{ width: `${progress}%` }}
+                className="h-full bg-blue-500 transition-all duration-1000"
+              ></div>
+            </div>
+            <div>
+              <h1 className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 mb-4 sm:mb-8 drop-shadow-xl text-center">
+                {timeLeft}
+              </h1>
+            </div>
+          </>
         )}
 
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 mb-4 sm:mb-8 drop-shadow-xl text-center py-2">
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 mb-4 drop-shadow-xl text-center py-2">
           Jogo da memória
         </h1>
         <p className="text-base sm:text-lg font-medium text-gray-400 mb-6 sm:mb-10 tracking-wide text-center">

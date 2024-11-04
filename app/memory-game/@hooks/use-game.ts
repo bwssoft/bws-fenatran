@@ -52,7 +52,8 @@ export const useGame = () => {
     handleReset,
     isGameStarted,
     conclusion,
-    handleExitGame
+    handleExitGame,
+    timeLeft
   }
 
 }
