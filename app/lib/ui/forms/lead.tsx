@@ -51,7 +51,7 @@ export function LeadForm() {
               </label>
               <input
                 {...register("phone")}
-                placeholder="55 11 999697185"
+                placeholder="55 11 940174266"
                 type="phone"
                 id="phone"
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
