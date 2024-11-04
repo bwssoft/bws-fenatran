@@ -4,7 +4,7 @@ import useTimer from "./use-timer";
 
 export const useGame = () => {
   const [isGameStarted, setIsGameStarted] = useState(false);
-  const { cards, handleCardClick, resetGame, flipAllCards } = useFlippedCards();
+  const { cards, handleCardClick, resetGame, flipAllCards, handleDisableClick } = useFlippedCards();
   const { timeLeft, progress } = useTimer(30, isGameStarted);
 
   useEffect(() => {
@@ -17,12 +17,14 @@ export const useGame = () => {
   const handleStartGame = async () => {
     await flipAllCards(true)
     await flipAllCards(false)
+    handleDisableClick(false)
     setIsGameStarted(true);
   };
 
   const handleReset = () => {
     resetGame();
     setIsGameStarted(false);
+    handleDisableClick(true)
   };
 
   return {

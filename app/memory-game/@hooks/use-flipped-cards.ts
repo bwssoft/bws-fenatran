@@ -8,7 +8,7 @@ interface Card {
 export const useFlippedCards = () => {
   const [cards, setCards] = useState<Card[]>([]);
   const [flippedCards, setFlippedCards] = useState<Card[]>([]);
-  const [disableClick, setDisableClick] = useState(false);
+  const [disableClick, setDisableClick] = useState(true);
 
   const cardValues = [
     "/game/ASTRONAUTA.png",
@@ -94,10 +94,13 @@ export const useFlippedCards = () => {
     setDisableClick(false);
   };
 
+  const handleDisableClick = (value: boolean) => setDisableClick(value)
+
   return {
     handleCardClick,
     resetGame,
     cards,
-    flipAllCards
+    flipAllCards,
+    handleDisableClick
   }
 }
