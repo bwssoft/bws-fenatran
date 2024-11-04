@@ -17,7 +17,7 @@ export default function MemoryGame() {
         width={540}
         height={540}
         alt="boné"
-        className="drop-shadow-[0_20px_20px_#3BACD185]"
+        className="drop-shadow-[0_20px_20px_#3BACD190]"
       />
 
       <LeadForm />
