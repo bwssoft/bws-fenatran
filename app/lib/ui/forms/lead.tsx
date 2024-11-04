@@ -16,7 +16,7 @@ export function LeadForm() {
                 Nome
               </label>
               <input
-                placeholder="Oswaldo Conti-Bosso"
+                placeholder="BWS Iot"
                 type="text"
                 id="name"
                 {...register("name")}
@@ -34,7 +34,7 @@ export function LeadForm() {
               </label>
               <input
                 {...register("email")}
-                placeholder="oswaldo@bwsiot.com"
+                placeholder="suporte@bwsiot.com"
                 type="email"
                 id="email"
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
@@ -65,7 +65,7 @@ export function LeadForm() {
           type="submit"
           className="w-full sm:max-w-xs text-center mt-12 px-8 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500"
         >
-          Jogaraaaa
+          Jogar
         </button>
       </div>
     </form>
