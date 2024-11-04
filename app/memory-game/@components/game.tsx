@@ -32,7 +32,7 @@ export const MemoryGame: React.FC = () => {
           </div>
         )}
 
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 mb-4 sm:mb-8 drop-shadow-xl text-center">
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-blue-600 mb-4 sm:mb-8 drop-shadow-xl text-center py-2">
           Jogo da memória
         </h1>
         <p className="text-base sm:text-lg font-medium text-gray-400 mb-6 sm:mb-10 tracking-wide text-center">
