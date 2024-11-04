@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useRouter } from "next/navigation"
+import { useEffect } from 'react';
 
 const schema = z.object({
   name: z.string().min(3, 'Nome é obrigatório'),
@@ -38,6 +39,10 @@ export function useLeadForm() {
       console.error(e)
     }
   });
+
+  useEffect(() => {
+    console.log('errors', errors)
+  }, [errors])
 
   return {
     register,

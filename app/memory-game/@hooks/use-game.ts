@@ -10,7 +10,7 @@ interface IConclusion {
 
 export const useGame = () => {
   const [isGameStarted, setIsGameStarted] = useState(false);
-  const [conclusion, setConclusion] = useState<IConclusion>({ is_finished: true, winner: true })
+  const [conclusion, setConclusion] = useState<IConclusion>({ is_finished: false, winner: true })
   const { cards, handleCardClick, resetGame, flipAllCards, handleDisableClick } = useFlippedCards();
   const { timeLeft, progress } = useTimer(30, isGameStarted);
   const router = useRouter()

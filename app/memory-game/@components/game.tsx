@@ -1,7 +1,6 @@
 "use client";
 
 import "@/app/lib/styles/space.css";
-import Image from "next/image";
 import { useGame } from "../@hooks/use-game";
 import { Modal } from "./modal";
 
@@ -52,9 +51,8 @@ export const MemoryGame: React.FC = () => {
               }`}
             >
               {(card.isFlipped || card.isMatched) && (
-                <Image
+                <img
                   src={card.value}
-                  fill={true}
                   alt="Memory card"
                   className="w-full h-full object-cover rounded-lg"
                 />
