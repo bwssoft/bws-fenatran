@@ -37,6 +37,7 @@
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.45) 2.5px, transparent 2.5px),
     radial-gradient(circle at 50% 75%, rgba(255, 255, 255, 0.4) 2.5px, transparent 2.5px);
 
+    
   background-size: 450px 450px;
   position: relative;
   overflow: hidden;
