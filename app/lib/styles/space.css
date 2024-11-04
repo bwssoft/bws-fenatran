@@ -41,16 +41,16 @@
   position: relative;
   overflow: hidden;
   /* Animações */
-  animation: backgroundMove 100s linear infinite;
+  /* animation: backgroundMove 100s linear infinite; */
 }
 
 /* Animação de movimento lento para o fundo */
-@keyframes backgroundMove {
+/* @keyframes backgroundMove {
   0% { background-position: 0 0; }
   100% { background-position: 1000px 1000px; }
-}
+} */
 
-.memory-game-container::before, .memory-game-container::after {
+/* .memory-game-container::before, .memory-game-container::after {
   content: '';
   position: absolute;
   top: 0;
@@ -60,10 +60,10 @@
   background-repeat: repeat;
   pointer-events: none;
   z-index: -1;
-}
+} */
 
 /* Estrelas piscando: Camada de estrelas menores */
-.memory-game-container::before {
+/* .memory-game-container::before {
   background-image: 
     radial-gradient(circle, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
     radial-gradient(circle, rgba(255, 255, 255, 0.2) 1.5px, transparent 1.5px),
@@ -71,10 +71,10 @@
   background-size: 200px 200px;
   opacity: 0.6;
   animation: twinkle 5s infinite alternate ease-in-out;
-}
+} */
 
 /* Estrelas piscando: Camada de estrelas maiores */
-.memory-game-container::after {
+/* .memory-game-container::after {
   background-image: 
     radial-gradient(circle, rgba(255, 255, 255, 0.3) 2px, transparent 2px),
     radial-gradient(circle, rgba(255, 255, 255, 0.35) 2.5px, transparent 2.5px),
@@ -82,10 +82,10 @@
   background-size: 300px 300px;
   opacity: 0.8;
   animation: twinkle 7s infinite alternate ease-in-out;
-}
+} */
 
 /* Animação de brilho suave para simular "piscar" */
-@keyframes twinkle {
+/* @keyframes twinkle {
   0% { opacity: 0.3; }
   100% { opacity: 0.7; }
-}
+} */
