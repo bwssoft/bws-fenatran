@@ -2,7 +2,7 @@
 import { useLeadForm } from "./use-lead";
 
 export function LeadForm() {
-  const { register, handleSubmit } = useLeadForm();
+  const { register, handleSubmit, errors } = useLeadForm();
   return (
     <form className="w-full max-w-md" onSubmit={handleSubmit}>
       <div className="space-y-12">
@@ -23,6 +23,7 @@ export function LeadForm() {
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
               />
             </div>
+            <p className="text-sm">{errors?.name?.message ?? ""}</p>
           </div>
           <div className="col-span-full">
             <div className="rounded-md px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-blue-600 bg-white w-full">
@@ -40,6 +41,7 @@ export function LeadForm() {
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
               />
             </div>
+            <p className="text-sm">{errors?.email?.message ?? ""}</p>
           </div>
           <div className="col-span-full">
             <div className="rounded-md px-3 pb-1.5 pt-2.5 shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-blue-600 bg-white w-full">
@@ -58,6 +60,7 @@ export function LeadForm() {
                 className="block w-full border-0 p-0 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
               />
             </div>
+            <p className="text-sm">{errors?.phone?.message ?? ""}</p>
           </div>
         </div>
       </div>

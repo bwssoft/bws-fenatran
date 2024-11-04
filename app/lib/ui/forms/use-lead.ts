@@ -5,13 +5,14 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { useRouter } from "next/navigation"
 import { useEffect } from 'react';
+import { saveLead } from '../../action/save-lead';
 
 const schema = z.object({
   name: z.string().min(3, 'Nome é obrigatório'),
   email: z.string().email('Email inválido'),
   phone: z
     .string()
-    .min(11, 'O telefone deve ter no mínimo 10 dígitos')
+    .min(11, 'O telefone deve ter no mínimo 11 dígitos')
     .max(15, 'O telefone deve ter no máximo 15 dígitos')
     .regex(/^\d+$/, 'O telefone deve conter apenas números'),
 });
@@ -32,8 +33,9 @@ export function useLeadForm() {
 
   const router = useRouter()
 
-  const handleSubmit = hookFormSubmit(async () => {
+  const handleSubmit = hookFormSubmit(async (data) => {
     try {
+      await saveLead(data)
       router.push("/memory-game")
     } catch (e) {
       console.error(e)
