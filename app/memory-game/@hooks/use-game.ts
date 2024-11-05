@@ -11,19 +11,18 @@ interface IConclusion {
 export const useGame = () => {
   const [isGameStarted, setIsGameStarted] = useState(false);
   const [conclusion, setConclusion] = useState<IConclusion>({ is_finished: false, winner: true })
-  const { cards, handleCardClick, resetGame, handleDisableClick, flipAllCards } = useFlippedCards();
+  const { cards, handleCardClick, resetCards, handleDisableClick, flipAllCards } = useFlippedCards();
   const { timeLeft, progress } = useTimer(40, isGameStarted);
   const router = useRouter()
 
   useEffect(() => {
     const allCardsIsMatched = cards.every(card => card.isMatched)
-
     if (timeLeft === 0 && isGameStarted) {
-      handleReset();
       setConclusion({ is_finished: true, winner: false })
+      handleReset()
     } else if (isGameStarted && allCardsIsMatched) {
-      handleReset();
       setConclusion({ is_finished: true, winner: true })
+      handleReset()
     }
   }, [timeLeft, isGameStarted, cards]);
 
@@ -35,7 +34,7 @@ export const useGame = () => {
   };
 
   const handleReset = () => {
-    resetGame();
+    resetCards();
     setIsGameStarted(false);
     handleDisableClick(true)
   };

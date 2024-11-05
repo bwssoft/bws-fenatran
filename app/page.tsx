@@ -17,17 +17,13 @@ export default function MemoryGame() {
         width={540}
         height={540}
         alt="boné"
-        className="drop-shadow-[0_20px_20px_#3BACD190]"
+        className="drop-shadow-[0_7px_7px_#3BACD195]"
       />
 
       <LeadForm />
       <div className="flex mt-5 gap-4">
         <Link
           href={"/qr-code"}
-          // className="w-full text-nowrap px-3 text-center py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500
-
-          // "
-
           className="w-full shadow-2xl transition-all duration-200 text-nowrap p-3 px-5 text-center bg-black border-2 focus:ring-4 focus:ring-blue-500 border-gray-500 rounded-md font-medium text-white hover:bg-gray-900/40"
         >
           QR Code

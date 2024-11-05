@@ -17,6 +17,7 @@ export const MemoryGame: React.FC = () => {
     handleExitGame,
     timeLeft,
   } = useGame();
+
   return (
     <>
       <Modal

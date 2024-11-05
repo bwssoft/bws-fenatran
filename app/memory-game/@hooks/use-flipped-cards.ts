@@ -76,7 +76,7 @@ export const useFlippedCards = () => {
     setDisableClick(false);
   };
 
-  const resetGame = () => {
+  const resetCards = () => {
     setCards(shuffleCards());
     setFlippedCards([]);
   };
@@ -98,7 +98,7 @@ export const useFlippedCards = () => {
 
   return {
     handleCardClick,
-    resetGame,
+    resetCards,
     cards,
     flipAllCards,
     handleDisableClick
